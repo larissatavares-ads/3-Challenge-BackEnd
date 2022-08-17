@@ -1,38 +1,27 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using ServicoTransferenciaRef.Models;
+using ServicoTransferenciaRef.Repositorio;
+using ServicoTransferenciaRef.Views;
+using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.IO;
+using System.Threading.Tasks;
 
 namespace ServicoTransferenciaRef.Controllers
 {
-    public class UploadController : Controller
+
+    //Classe para processar o upload e cadastro dos arquivos
+    public class UploadController
     {
-        public ActionResult Index()
+        public IActionResult Incluir(Arquivo arquivo)
         {
-            return View();
-        }
-        [HttpGet]
-        public ActionResult UploadFile()
-        {
-            return View();
-        }
-        [HttpPost]
-        public ActionResult UploadFile(HttpPostedFileBase file)
-        {
-            try
-            {
-                if (file.ContentLength > 0)
-                {
-                    string _FileName = Path.GetFileName(file.FileName);
-                    string _path = Path.Combine(Server.MapPath("~/UploadedFiles"), _FileName);
-                    file.SaveAs(_path);
-                }
-                ViewBag.Message = "File Uploaded Successfully!!";
-                return View();
-            }
-            catch
-            {
-                ViewBag.Message = "File upload failed!!";
-                return View();
-            }
+            var _repo = new ArquivoRepositorioCSV();
+            _repo.Incluir(arquivo);
+            //var html = HTMLUtils.CarregaArquivoHTML("sucesso");
+            var html = new ViewResult { ViewName = "sucesso" };
+            return html;
         }
     }
 }

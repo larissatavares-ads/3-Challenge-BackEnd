@@ -38,3 +38,37 @@ C:\GitHub\3 Challenge BackEnd - Alura\ServicoTransferenciaRef\obj\Debug\netcorea
 C:\GitHub\3 Challenge BackEnd - Alura\ServicoTransferenciaRef\obj\Debug\netcoreapp3.1\ServicoTransferenciaRef.dll
 C:\GitHub\3 Challenge BackEnd - Alura\ServicoTransferenciaRef\obj\Debug\netcoreapp3.1\ServicoTransferenciaRef.pdb
 C:\GitHub\3 Challenge BackEnd - Alura\ServicoTransferenciaRef\obj\Debug\netcoreapp3.1\ServicoTransferenciaRef.genruntimeconfig.cache
+C:\Users\beatr\Documents\Estudos Larissa\3-Challenge-BackEnd-Alura\3-Challenge-BackEnd\ServicoTransferenciaRef\bin\Debug\netcoreapp3.1\appsettings.Development.json
+C:\Users\beatr\Documents\Estudos Larissa\3-Challenge-BackEnd-Alura\3-Challenge-BackEnd\ServicoTransferenciaRef\bin\Debug\netcoreapp3.1\appsettings.json
+C:\Users\beatr\Documents\Estudos Larissa\3-Challenge-BackEnd-Alura\3-Challenge-BackEnd\ServicoTransferenciaRef\bin\Debug\netcoreapp3.1\Repositorio\arquivos.csv
+C:\Users\beatr\Documents\Estudos Larissa\3-Challenge-BackEnd-Alura\3-Challenge-BackEnd\ServicoTransferenciaRef\bin\Debug\netcoreapp3.1\ServicoTransferenciaRef.exe
+C:\Users\beatr\Documents\Estudos Larissa\3-Challenge-BackEnd-Alura\3-Challenge-BackEnd\ServicoTransferenciaRef\bin\Debug\netcoreapp3.1\ServicoTransferenciaRef.deps.json
+C:\Users\beatr\Documents\Estudos Larissa\3-Challenge-BackEnd-Alura\3-Challenge-BackEnd\ServicoTransferenciaRef\bin\Debug\netcoreapp3.1\ServicoTransferenciaRef.runtimeconfig.json
+C:\Users\beatr\Documents\Estudos Larissa\3-Challenge-BackEnd-Alura\3-Challenge-BackEnd\ServicoTransferenciaRef\bin\Debug\netcoreapp3.1\ServicoTransferenciaRef.runtimeconfig.dev.json
+C:\Users\beatr\Documents\Estudos Larissa\3-Challenge-BackEnd-Alura\3-Challenge-BackEnd\ServicoTransferenciaRef\bin\Debug\netcoreapp3.1\ServicoTransferenciaRef.dll
+C:\Users\beatr\Documents\Estudos Larissa\3-Challenge-BackEnd-Alura\3-Challenge-BackEnd\ServicoTransferenciaRef\bin\Debug\netcoreapp3.1\ServicoTransferenciaRef.pdb
+C:\Users\beatr\Documents\Estudos Larissa\3-Challenge-BackEnd-Alura\3-Challenge-BackEnd\ServicoTransferenciaRef\obj\Debug\netcoreapp3.1\ServicoTransferenciaRef.csproj.AssemblyReference.cache
+C:\Users\beatr\Documents\Estudos Larissa\3-Challenge-BackEnd-Alura\3-Challenge-BackEnd\ServicoTransferenciaRef\obj\Debug\netcoreapp3.1\ServicoTransferenciaRef.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\beatr\Documents\Estudos Larissa\3-Challenge-BackEnd-Alura\3-Challenge-BackEnd\ServicoTransferenciaRef\obj\Debug\netcoreapp3.1\ServicoTransferenciaRef.AssemblyInfoInputs.cache
+C:\Users\beatr\Documents\Estudos Larissa\3-Challenge-BackEnd-Alura\3-Challenge-BackEnd\ServicoTransferenciaRef\obj\Debug\netcoreapp3.1\ServicoTransferenciaRef.AssemblyInfo.cs
+C:\Users\beatr\Documents\Estudos Larissa\3-Challenge-BackEnd-Alura\3-Challenge-BackEnd\ServicoTransferenciaRef\obj\Debug\netcoreapp3.1\ServicoTransferenciaRef.csproj.CoreCompileInputs.cache
+C:\Users\beatr\Documents\Estudos Larissa\3-Challenge-BackEnd-Alura\3-Challenge-BackEnd\ServicoTransferenciaRef\obj\Debug\netcoreapp3.1\ServicoTransferenciaRef.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\beatr\Documents\Estudos Larissa\3-Challenge-BackEnd-Alura\3-Challenge-BackEnd\ServicoTransferenciaRef\obj\Debug\netcoreapp3.1\staticwebassets\ServicoTransferenciaRef.StaticWebAssets.Manifest.cache
+C:\Users\beatr\Documents\Estudos Larissa\3-Challenge-BackEnd-Alura\3-Challenge-BackEnd\ServicoTransferenciaRef\obj\Debug\netcoreapp3.1\ServicoTransferenciaRef.RazorTargetAssemblyInfo.cache
+C:\Users\beatr\Documents\Estudos Larissa\3-Challenge-BackEnd-Alura\3-Challenge-BackEnd\ServicoTransferenciaRef\obj\Debug\netcoreapp3.1\ServicoTransferenciaRef.dll
+C:\Users\beatr\Documents\Estudos Larissa\3-Challenge-BackEnd-Alura\3-Challenge-BackEnd\ServicoTransferenciaRef\obj\Debug\netcoreapp3.1\ServicoTransferenciaRef.pdb
+C:\Users\beatr\Documents\Estudos Larissa\3-Challenge-BackEnd-Alura\3-Challenge-BackEnd\ServicoTransferenciaRef\obj\Debug\netcoreapp3.1\ServicoTransferenciaRef.genruntimeconfig.cache
+C:\Users\beatr\Documents\Estudos Larissa\3-Challenge-BackEnd-Alura\3-Challenge-BackEnd\ServicoTransferenciaRef\bin\Debug\netcoreapp3.1\Views\Cadastro\formulario.cshtml
+C:\Users\beatr\Documents\Estudos Larissa\3-Challenge-BackEnd-Alura\3-Challenge-BackEnd\ServicoTransferenciaRef\bin\Debug\netcoreapp3.1\Views\Cadastro\sucesso.cshtml
+C:\Users\beatr\Documents\Estudos Larissa\3-Challenge-BackEnd-Alura\3-Challenge-BackEnd\ServicoTransferenciaRef\bin\Debug\netcoreapp3.1\ServicoTransferenciaRef.Views.dll
+C:\Users\beatr\Documents\Estudos Larissa\3-Challenge-BackEnd-Alura\3-Challenge-BackEnd\ServicoTransferenciaRef\bin\Debug\netcoreapp3.1\ServicoTransferenciaRef.Views.pdb
+C:\Users\beatr\Documents\Estudos Larissa\3-Challenge-BackEnd-Alura\3-Challenge-BackEnd\ServicoTransferenciaRef\obj\Debug\netcoreapp3.1\ServicoTransferenciaRef.RazorAssemblyInfo.cache
+C:\Users\beatr\Documents\Estudos Larissa\3-Challenge-BackEnd-Alura\3-Challenge-BackEnd\ServicoTransferenciaRef\obj\Debug\netcoreapp3.1\ServicoTransferenciaRef.RazorAssemblyInfo.cs
+C:\Users\beatr\Documents\Estudos Larissa\3-Challenge-BackEnd-Alura\3-Challenge-BackEnd\ServicoTransferenciaRef\obj\Debug\netcoreapp3.1\ServicoTransferenciaRef.TagHelpers.input.cache
+C:\Users\beatr\Documents\Estudos Larissa\3-Challenge-BackEnd-Alura\3-Challenge-BackEnd\ServicoTransferenciaRef\obj\Debug\netcoreapp3.1\ServicoTransferenciaRef.TagHelpers.output.cache
+C:\Users\beatr\Documents\Estudos Larissa\3-Challenge-BackEnd-Alura\3-Challenge-BackEnd\ServicoTransferenciaRef\obj\Debug\netcoreapp3.1\ServicoTransferenciaRef.RazorCoreGenerate.cache
+C:\Users\beatr\Documents\Estudos Larissa\3-Challenge-BackEnd-Alura\3-Challenge-BackEnd\ServicoTransferenciaRef\obj\Debug\netcoreapp3.1\Razor\Views\Cadastro\formulario.cshtml.g.cs
+C:\Users\beatr\Documents\Estudos Larissa\3-Challenge-BackEnd-Alura\3-Challenge-BackEnd\ServicoTransferenciaRef\obj\Debug\netcoreapp3.1\Razor\Views\Cadastro\sucesso.cshtml.g.cs
+C:\Users\beatr\Documents\Estudos Larissa\3-Challenge-BackEnd-Alura\3-Challenge-BackEnd\ServicoTransferenciaRef\obj\Debug\netcoreapp3.1\ServicoTransferenciaRef.RazorTargetAssemblyInfo.cs
+C:\Users\beatr\Documents\Estudos Larissa\3-Challenge-BackEnd-Alura\3-Challenge-BackEnd\ServicoTransferenciaRef\obj\Debug\netcoreapp3.1\ServicoTransferenciaRef.Views.pdb
+C:\Users\beatr\Documents\Estudos Larissa\3-Challenge-BackEnd-Alura\3-Challenge-BackEnd\ServicoTransferenciaRef\obj\Debug\netcoreapp3.1\ServicoTransferenciaRef.csproj.CopyComplete

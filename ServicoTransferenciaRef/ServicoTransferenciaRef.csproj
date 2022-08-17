@@ -2,22 +2,28 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+	  <PreserveCompilationContext>true</PreserveCompilationContext>
   </PropertyGroup>
 
   <ItemGroup>
     <Compile Remove="NovaPasta1\**" />
-    <Compile Remove="NovaPasta\**" />
+    <Compile Remove="Views\Upload\**" />
     <Content Remove="NovaPasta1\**" />
-    <Content Remove="NovaPasta\**" />
+    <Content Remove="Views\Upload\**" />
     <EmbeddedResource Remove="NovaPasta1\**" />
-    <EmbeddedResource Remove="NovaPasta\**" />
+    <EmbeddedResource Remove="Views\Upload\**" />
     <None Remove="NovaPasta1\**" />
-    <None Remove="NovaPasta\**" />
+    <None Remove="Views\Upload\**" />
   </ItemGroup>
 
   <ItemGroup>
     <Compile Remove="Controllers\CadastroController.cs" />
     <Compile Remove="Controllers\Controller.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="Views\formulario.cshtml" />
+    <Content Remove="Views\sucesso.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -27,7 +33,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Views\Upload\" />
+    <None Include="Views\Cadastro\formulario.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Views\Cadastro\sucesso.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>
