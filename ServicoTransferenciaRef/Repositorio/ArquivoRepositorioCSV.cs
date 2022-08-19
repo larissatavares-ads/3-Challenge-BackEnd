@@ -8,13 +8,13 @@ namespace ServicoTransferenciaRef.Repositorio
 {
     public class ArquivoRepositorioCSV : IArquivoRepositorio
     {
-        private static readonly string nomeArquivo = "Repositorio\\arquivos.csv";
+        private static readonly string nomeArquivoCSV = "Repositorio\\arquivos.csv";
         private ListaDeTransacoes _transferencia;
         public ArquivoRepositorioCSV()
         {
             var arrayTransferencia = new List<Arquivo>();
 
-            using (var file = File.OpenText(nomeArquivo))
+            using (var file = File.OpenText(ArquivoRepositorioCSV.nomeArquivoCSV))
             {
                 while (!file.EndOfStream)
                 {
@@ -46,15 +46,13 @@ namespace ServicoTransferenciaRef.Repositorio
             }
             _transferencia = new ListaDeTransacoes("Transferencia", arrayTransferencia.ToArray());
         }
-        public ListaDeTransacoes Transferencias => _transferencia;
+        public ListaDeTransacoes Transferencia => _transferencia;
         public IEnumerable<Arquivo> Todos => _transferencia.Arquivos;
         public void Incluir(Arquivo arquivo)
         {
             var id = Todos.Select(a => a.Id).Max();
-            using (var file = File.AppendText(nomeArquivo))
-            {
-                file.WriteLine($"transferencia;{id + 1};{arquivo.Nome};{arquivo.Conta};{arquivo.Agencia};{arquivo.Banco};{arquivo.Valor};{arquivo.Data}");
-            }
+            using var file = File.AppendText(ArquivoRepositorioCSV.nomeArquivoCSV);
+            file.WriteLine($"transferencia;{id + 1};{arquivo.Nome};{arquivo.Conta};{arquivo.Agencia};{arquivo.Banco};{arquivo.Valor};{arquivo.Data}");
         }
     }
 }

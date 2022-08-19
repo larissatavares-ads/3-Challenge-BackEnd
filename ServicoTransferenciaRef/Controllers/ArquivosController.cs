@@ -9,20 +9,22 @@ using System.Threading.Tasks;
 
 namespace ServicoTransferenciaRef.Controllers
 {
-    public class ArquivosController
+    public class ArquivosController : Controller
     {
         //Classe para processar os arquivos cadastrados
-        public IActionResult ExibeFormulario()
+        public IEnumerable<Arquivo> Arquivos { get; set; }
+
+        public IActionResult Transferencia()
         {
-            new ArquivoRepositorioCSV();
-            var html = new ViewResult { ViewName = "formulario" };
-            return html;
+            var _repo = new ArquivoRepositorioCSV();
+            ViewBag.Arquivos = _repo.Transferencia.Arquivos;
+            return View("formulario");
         }
-        //public IActionResult Transferencia()
+        //public IActionResult ExibeLista()
         //{
         //    var _repo = new ArquivoRepositorioCSV();
-        //    var html = ExibeFormulario();
-        //    return html;
+        //    ViewBag.Arquivos = _repo.Transferencia.Arquivos; 
+        //    return View("formulario");
         //}
     }
 }

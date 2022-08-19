@@ -1,0 +1,16 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <h3>IMPORTAÇÕES REALIZADAS</h3>
+    <ul>
+        @foreach (var arquivo in ViewBag.Arquivos)
+        {
+        <li>@arquivo.Nome | @arquivo.Conta | @arquivo.Agencia | @arquivo.Banco | @arquivo.Valor | @arquivo.Data</li>;
+        }
+    </ul>
+</body>
+</html>

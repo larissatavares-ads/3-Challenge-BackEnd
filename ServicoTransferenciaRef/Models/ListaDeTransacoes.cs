@@ -6,7 +6,6 @@ namespace ServicoTransferenciaRef.Models
 {
     public class ListaDeTransacoes
     {
-        public string Nome { get; set; }
 
         private List<Arquivo> _arquivos;
         public ListaDeTransacoes(string nome, params Arquivo[] arquivos)
@@ -15,6 +14,7 @@ namespace ServicoTransferenciaRef.Models
             _arquivos = arquivos.ToList();
             _arquivos.ForEach(a => a.Lista = this);
         }
+        public string Nome { get; set; }
         public IEnumerable<Arquivo> Arquivos
         {
             get { return _arquivos; }

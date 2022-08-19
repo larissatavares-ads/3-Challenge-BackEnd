@@ -5,7 +5,7 @@ namespace ServicoTransferenciaRef.Repositorio
 {
     public interface IArquivoRepositorio
     {
-        ListaDeTransacoes Transferencias { get; }
+        ListaDeTransacoes Transferencia { get; }
         IEnumerable<Arquivo> Todos { get; }
         void Incluir(Arquivo arquivo);
     }

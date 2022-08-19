@@ -1,19 +1,27 @@
-﻿using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Routing;
+﻿using Microsoft.AspNetCore.Mvc;
 using ServicoTransferenciaRef.Models;
 using ServicoTransferenciaRef.Repositorio;
-using ServicoTransferenciaRef.Views;
-using System;
-using System.IO;
-using System.Threading.Tasks;
 
 namespace ServicoTransferenciaRef.Controllers
 {
-    public class CadastroController : HTMLUtils
+
+    //Classe para processar o upload e cadastro dos arquivos
+    public class CadastroController : Controller
     {
-        
-        
+        public IActionResult Incluir(Arquivo arquivo)
+        {
+            var _repo = new ArquivoRepositorioCSV();
+            _repo.Incluir(arquivo);
+            var html = new ViewResult { ViewName = "sucesso" };
+            return html;
+        }
+        public IActionResult ExibeFormulario()
+        {
+            var _repo = new ArquivoRepositorioCSV();
+            ViewBag.Arquivos = _repo.Transferencia.Arquivos;
+            return View("formulario");
+            //var html = new ViewResult { ViewName = "formulario" };
+            //return html;
+        }
     }
 }

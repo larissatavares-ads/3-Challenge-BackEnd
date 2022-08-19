@@ -17,7 +17,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Remove="Controllers\CadastroController.cs" />
     <Compile Remove="Controllers\Controller.cs" />
   </ItemGroup>
 
@@ -28,7 +27,7 @@
 
   <ItemGroup>
     <None Update="Repositorio\arquivos.csv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
 

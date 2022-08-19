@@ -13,10 +13,6 @@ namespace ServicoTransferenciaRef.Models
         public string Data { get; set; }
         public ListaDeTransacoes Lista { get; set; }
 
-        public override string ToString()
-        {
-            return $"{Id} | {Nome} | {Conta} | {Agencia} | {Banco} | {Valor} | {Data}";
-        }
         public string Detalhes()
         {
             var stringBuilder = new StringBuilder();
@@ -29,6 +25,10 @@ namespace ServicoTransferenciaRef.Models
             stringBuilder.AppendLine($"Valor: {Valor}");
             stringBuilder.AppendLine($"Data: {Data}");
             return stringBuilder.ToString();
+        }
+        public override string ToString()
+        {
+            return $"{Id} | {Nome} | {Conta} | {Agencia} | {Banco} | {Valor} | {Data}";
         }
     }
 }

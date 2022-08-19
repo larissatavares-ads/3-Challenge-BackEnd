@@ -41,7 +41,12 @@
     </form>
     <br />
     <h3>IMPORTAÇÕES REALIZADAS</h3>
-    <ul>#NOVO-ARQUIVO#</ul>
+    <ul>
+        @foreach (var arquivo in ViewBag.Arquivos)
+        {
+            <li>@arquivo.Nome | @arquivo.Conta | @arquivo.Agencia | @arquivo.Banco | @arquivo.Valor | @arquivo.Data</li>;
+        }
+    </ul>
     
 </body>
 </html>
