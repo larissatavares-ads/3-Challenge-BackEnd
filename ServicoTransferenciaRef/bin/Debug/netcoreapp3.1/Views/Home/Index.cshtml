@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <h3>IMPORTAR TRANSAÇÕES</h3>
+    <form action="/Home/Incluir" method="post">
+        <div>
+            <br />
+            <br />
+            <label>Nome do titular:</label>
+            <input name="Nome" />
+            <br />
+            <label>Conta:</label>
+            <input name="Conta" />
+            <br />
+            <label>Agencia:</label>
+            <input name="Agencia" />
+            <br />
+            <label>Banco:</label>
+            <input name="Banco" />
+            <br />
+            <label>Valor:</label>
+            <input name="Valor" />
+            <br />
+            <label>Data:</label>
+            <input name="Data" />
+            <br />
+            <button>Gravar</button>
+        </div>
+    </form>
+
+    <h3>LEITOR DE ARQUIVOS</h3>
+    <br />
+    <br />
+    <div>
+        <input type="file" name="arquivo" id="arquivo01" input="pegarArquivo" />
+        <br /><br />
+        <button type="button" onclick="pegarArquivo()">Enviar</button>
+        <input type="reset" value="Apagar" />
+    </div>
+    <br />
+    <br />
+    <h3>IMPORTAÇÕES REALIZADAS</h3>
+    <ul>
+        @foreach (var arquivo in ViewBag.Arquivos)
+        {
+            <li>@arquivo.Nome | @arquivo.Conta | @arquivo.Agencia | @arquivo.Banco | @arquivo.Valor | @arquivo.Data</li>
+            ;
+        }
+    </ul>
+</body>
+<script>
+        const input = document.getElementById('arquivo01')
+        function pegarArquivo(files) {
+            const leitorArquivo = new FileReader();
+
+            let fileBase64 = ''
+            const header = new Headers();
+            header.append('Content-Type', "multipart/form-data")
+            leitorArquivo.addEventListener('loadend', () => {
+                fileBase64 = leitorArquivo.result
+                fetch("/pegarArquivo", { method: 'POST', headers: header, body: fileBase64 })
+                    .then(res => {
+
+                        console.log('feita requisicao => ', res)
+                        //return res.json()
+
+                    })
+                    .then(obj => {
+                        //if (obj) {
+                        //    switch (obj.status) {
+                        //        case 0:
+                        //            criandoAlerts(obj.mensagem, 'success')
+                        //            break
+                        //        case 1:
+                        //            criandoAlerts(obj.mensagem, 'danger')
+                        //            break
+                        //    }
+                        //}
+                    })
+            })
+            leitorArquivo.readAsDataURL(input.files[0]);
+        }
+    </script>
+</html>

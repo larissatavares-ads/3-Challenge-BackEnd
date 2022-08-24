@@ -1,4 +1,7 @@
-﻿using System.Text;
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Text;
 
 namespace ServicoTransferenciaRef.Models
 {
@@ -12,6 +15,25 @@ namespace ServicoTransferenciaRef.Models
         public decimal Valor { get; set; }
         public string Data { get; set; }
         public ListaDeTransacoes Lista { get; set; }
+
+        public static IList<Arquivo> CreateList(string[][] linhas)
+        {
+            List<Arquivo> arquivos = new List<Arquivo>();
+            foreach (string[] line in linhas)
+            {
+                arquivos.Add(new Arquivo
+                {
+                    Id = Convert.ToInt32(line[1]),
+                    Nome = line[2],
+                    Conta = Convert.ToDouble(line[3]),
+                    Agencia = Convert.ToDouble(line[4]),
+                    Banco = line[5],
+                    Valor = Convert.ToDecimal(line[6]),
+                    Data = line[7]
+                });
+            }
+            return arquivos;
+        }
 
         public string Detalhes()
         {

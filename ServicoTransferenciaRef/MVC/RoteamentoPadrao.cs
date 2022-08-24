@@ -16,6 +16,7 @@ namespace ServicoTransferenciaRef.MVC
 
             var classe = Convert.ToString(context.GetRouteValue("classe"));
             var nomeMetodo = Convert.ToString(context.GetRouteValue("metodo"));
+            
             var nomeCompleto = $"ServicoTransferenciaRef.Controllers.{classe}Controller";
 
             var tipo = Type.GetType(nomeCompleto);

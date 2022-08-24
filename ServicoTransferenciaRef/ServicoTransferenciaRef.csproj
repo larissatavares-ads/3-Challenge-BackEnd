@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-	  <PreserveCompilationContext>true</PreserveCompilationContext>
+	<PreserveCompilationContext>true</PreserveCompilationContext>
   </PropertyGroup>
 
   <ItemGroup>
@@ -32,11 +32,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="Views\Cadastro\formulario.cshtml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    <None Include="Views\Home\Index.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Views\Cadastro\sucesso.cshtml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    <None Include="Views\Home\sucesso.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
 
