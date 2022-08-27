@@ -10,11 +10,13 @@ namespace ServicoTransferenciaRef.Repositorio
     {
         private static string nomeArquivoCSV = "Repositorio\\arquivos.csv";
         private ListaDeTransacoes _transferencia;
+
         public ArquivoRepositorioCSV()
         {
             var arrayTransferencia = new List<Arquivo>();
 
-            using (var file = File.OpenText(nomeArquivoCSV))
+            using (
+                var file = File.OpenText(nomeArquivoCSV))
             {
                 while (!file.EndOfStream)
                 {
@@ -47,6 +49,25 @@ namespace ServicoTransferenciaRef.Repositorio
 
             _transferencia = new ListaDeTransacoes("Transferencia", arrayTransferencia.ToArray());
         }
+
+        public static Arquivo CreateList(string[][] linhas)
+        {
+            var arrayTransferencia = new Arquivo();
+            foreach (string[] line in linhas)
+            {
+                arrayTransferencia = new Arquivo
+                {
+                    Nome = line[0],
+                    Conta = Convert.ToDouble(line[1]),
+                    Agencia = Convert.ToDouble(line[2]),
+                    Banco = line[3],
+                    Valor = Convert.ToDecimal(line[4]),
+                    Data = line[5]
+                };
+            }
+            return arrayTransferencia;
+        }
+
         public ListaDeTransacoes Transferencia => _transferencia;
         public IEnumerable<Arquivo> Todos => _transferencia.Arquivos;
         public void Incluir(Arquivo arquivo)
@@ -54,7 +75,7 @@ namespace ServicoTransferenciaRef.Repositorio
             var id = Todos.Select(x => x.Id).Max();
             using (var file = File.AppendText(nomeArquivoCSV))
             {
-                file.WriteLine($"transferencia;{id+1};{arquivo.Nome};{arquivo.Conta};{arquivo.Agencia};{arquivo.Banco};{arquivo.Valor};{arquivo.Data}");
+                file.WriteLine($"transferencia;{id + 1};{arquivo.Nome};{arquivo.Conta};{arquivo.Agencia};{arquivo.Banco};{arquivo.Valor};{arquivo.Data}");
             }
         }
     }

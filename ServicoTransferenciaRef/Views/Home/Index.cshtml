@@ -1,4 +1,7 @@
 ﻿<!DOCTYPE html>
+@{
+    ViewData["Title"] = "Home Page";
+}
 <html lang="pt-br">
     <head>
         <meta charset="utf-8" />
@@ -35,12 +38,15 @@
         <h3>LEITOR DE ARQUIVOS</h3>
         <br />
         <br />
-        <div>
-            <input type="file" name="arquivo" id="arquivo01" input="pegarArquivo" />
-            <br /><br />
-            <button type="button" onclick="pegarArquivo()">Enviar</button>
-            <input type="reset" value="Apagar" />
-        </div>
+        <form action="/Home/Incluir" method="post">
+            <div>
+                <input type="file" name="arquivo" id="arquivo01" input="pegarArquivo" />
+                <br /><br />
+                <button type="button" onclick="pegarArquivo()">Enviar</button>
+                <input type="reset" value="Apagar" />
+            </div>
+        </form>
+        
         <br />
         <br />
         <h3>IMPORTAÇÕES REALIZADAS</h3>
@@ -51,6 +57,38 @@
                 ;
             }
         </ul>
+
+        @*Testando MySQL*@
+        <h3>TESTANDO MYSQL</h3>
+        <form id="form1" runat="server">
+            <div>
+                <asp:HiddenField id="idConta" runat="server"/>
+                <table>
+                    <tr>
+                        <td>
+                            <Label Text="Conta" runat="server">Lista de transações</Label>
+                        </td>
+                        <td colspan="2">
+                            <input id="numId" runat="server"/>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2">
+                            <button type="button" Text="Salvar" id="btnSalvar" runat="server">Salvar</button>
+                            <button type="button" Text="Editar" id="btnEditar" runat="server">Editar</button>
+                            <button type="button" Text="Deletar" id="btnDeletar" runat="server">Deletar</button>
+                        </td>
+                    </tr>
+
+
+                </table>
+            </div>
+        </form>
+
+        @*Testando MySQL*@
+
+
     </body>
     <script>
         const input = document.getElementById('arquivo01')
@@ -59,16 +97,16 @@
 
             let fileBase64 = ''
             const header = new Headers();
-            header.append('Content-Type', "multipart/form-data")
+            header.append('Content-Type', "Home/Incluir")
             leitorArquivo.addEventListener('loadend', () => {
                 fileBase64 = leitorArquivo.result
                 fetch("/pegarArquivo", { method: 'POST', headers: header, body: fileBase64 })
                     .then(res => {
-
-                        console.log('feita requisicao => ', res)
+                        console.log('sucesso', res)
                     })
             })
             leitorArquivo.readAsDataURL(input.files[0]);
         }
+
     </script>
 </html>

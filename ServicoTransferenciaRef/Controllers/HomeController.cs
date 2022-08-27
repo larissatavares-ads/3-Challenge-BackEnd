@@ -23,11 +23,22 @@ namespace ServicoTransferenciaRef.Controllers
             return html;
         }
         public IActionResult ExibeFormulario()
+        
+        
         {
             var _repo = new ArquivoRepositorioCSV();
             ViewBag.Arquivos = _repo.Transferencia.Arquivos;
             return View("Index");
         }
+
+
+
+        public IActionResult Sucesso()
+        {
+            ViewData["Message"] = "Sucesso";
+            return View();
+        }
+
 
 
         [HttpPost("pegarArquivo")]
@@ -37,16 +48,18 @@ namespace ServicoTransferenciaRef.Controllers
             {
                 string conteudo = await PegarConteudoDoArquivo(HttpContext);
                 string[][] linhas = conteudo.ToString().Split('\n').Select(l => l.Split(';')).ToArray();
-                // Continuar a partir daqui
-                List<Arquivo> arquivos = Arquivo.CreateList(linhas).ToList();
-                return Ok(new BaseRetorno { Mensagem = "Transações importadas com sucesso" });
+                Arquivo arquivos = ArquivoRepositorioCSV.CreateList(linhas);
+                Incluir(arquivos);
+
+                return Sucesso();
+
+                //return Ok(new BaseRetorno { Mensagem = "Transações importadas com sucesso" });
             }
             catch (BusinessException ex)
             {
                 return BadRequest(new BaseRetorno { Mensagem = ex.Message, Status = 1 });
             }
         }
-
         private async Task<string> PegarConteudoDoArquivo(HttpContext httpContext)
         {
             UTF8Encoding uTF8Encoding = new UTF8Encoding();

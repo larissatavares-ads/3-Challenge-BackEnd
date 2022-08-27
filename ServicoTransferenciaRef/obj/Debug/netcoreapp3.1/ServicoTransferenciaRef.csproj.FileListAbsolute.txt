@@ -102,10 +102,6 @@ C:\GitHub\3-Challenge-BackEnd\ServicoTransferenciaRef\obj\Debug\netcoreapp3.1\Se
 C:\GitHub\3-Challenge-BackEnd\ServicoTransferenciaRef\obj\Debug\netcoreapp3.1\ServicoTransferenciaRef.pdb
 C:\GitHub\3-Challenge-BackEnd\ServicoTransferenciaRef\obj\Debug\netcoreapp3.1\ServicoTransferenciaRef.genruntimeconfig.cache
 C:\GitHub\3-Challenge-BackEnd\ServicoTransferenciaRef\obj\Debug\netcoreapp3.1\ServicoTransferenciaRef.csproj.CopyComplete
-C:\GitHub\3-Challenge-BackEnd\ServicoTransferenciaRef\bin\Debug\netcoreapp3.1\Views\Cadastro\sucesso.cshtml
-C:\GitHub\3-Challenge-BackEnd\ServicoTransferenciaRef\obj\Debug\netcoreapp3.1\Razor\Views\Cadastro\sucesso.cshtml.g.cs
-C:\GitHub\3-Challenge-BackEnd\ServicoTransferenciaRef\bin\Debug\netcoreapp3.1\Views\Cadastro\formulario.cshtml
-C:\GitHub\3-Challenge-BackEnd\ServicoTransferenciaRef\obj\Debug\netcoreapp3.1\Razor\Views\Cadastro\formulario.cshtml.g.cs
 C:\Users\beatr\Documents\Estudos Larissa\3-Challenge-BackEnd\ServicoTransferenciaRef\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\Users\beatr\Documents\Estudos Larissa\3-Challenge-BackEnd\ServicoTransferenciaRef\bin\Debug\netcoreapp3.1\appsettings.json
 C:\Users\beatr\Documents\Estudos Larissa\3-Challenge-BackEnd\ServicoTransferenciaRef\bin\Debug\netcoreapp3.1\Views\Home\Index.cshtml
@@ -140,3 +136,7 @@ C:\Users\beatr\Documents\Estudos Larissa\3-Challenge-BackEnd\ServicoTransferenci
 C:\Users\beatr\Documents\Estudos Larissa\3-Challenge-BackEnd\ServicoTransferenciaRef\obj\Debug\netcoreapp3.1\ServicoTransferenciaRef.pdb
 C:\Users\beatr\Documents\Estudos Larissa\3-Challenge-BackEnd\ServicoTransferenciaRef\obj\Debug\netcoreapp3.1\ServicoTransferenciaRef.genruntimeconfig.cache
 C:\Users\beatr\Documents\Estudos Larissa\3-Challenge-BackEnd\ServicoTransferenciaRef\obj\Debug\netcoreapp3.1\ServicoTransferenciaRef.csproj.CopyComplete
+C:\GitHub\3-Challenge-BackEnd\ServicoTransferenciaRef\bin\Debug\netcoreapp3.1\Views\Home\Index.cshtml
+C:\GitHub\3-Challenge-BackEnd\ServicoTransferenciaRef\bin\Debug\netcoreapp3.1\Views\Home\sucesso.cshtml
+C:\GitHub\3-Challenge-BackEnd\ServicoTransferenciaRef\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
+C:\GitHub\3-Challenge-BackEnd\ServicoTransferenciaRef\obj\Debug\netcoreapp3.1\Razor\Views\Home\sucesso.cshtml.g.cs

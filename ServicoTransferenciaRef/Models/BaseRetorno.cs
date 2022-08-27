@@ -1,4 +1,6 @@
-﻿namespace ServicoTransferenciaRef.Models
+﻿using Microsoft.AspNetCore.Mvc;
+
+namespace ServicoTransferenciaRef.Models
 {
     public class BaseRetorno
     {
