@@ -7,11 +7,19 @@ namespace ServicoTransferenciaRef
     {
         public static void Main(string[] args)
         {
-            IWebHost host = new WebHostBuilder()
-                .UseKestrel()
-                .UseStartup<Startup>()
-                .Build();
-            host.Run();
+            CreateHostBuilder(args).Build().Run();
+            //IWebHost host = new WebHostBuilder()
+            //    .UseKestrel()
+            //    .UseStartup<Startup>()
+            //    .Build();
+            //host.Run();
         }
+
+        public static IHostBuilder CreateHostBuilder(string[] args) =>
+        Host.CreateDefaultBuilder(args)
+            .ConfigureWebHostDefaults(webBuilder =>
+            {
+                webBuilder.UseStartup<Startup>();
+            });
     }
 }

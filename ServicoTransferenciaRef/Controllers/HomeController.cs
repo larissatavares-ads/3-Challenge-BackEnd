@@ -14,32 +14,30 @@ namespace ServicoTransferenciaRef.Controllers
     {
         //Classe para processar os arquivos cadastrados
         public IEnumerable<Arquivo> Arquivos { get; set; }
-
-        public IActionResult Incluir(Arquivo arquivo)
+        public IArquivoRepositorio _arquivoRepositorio { get; set; }
+        public HomeController(IArquivoRepositorio arquivoRepositorio)
         {
-            var repo = new ArquivoRepositorioCSV();
-            repo.Incluir(arquivo);
+            _arquivoRepositorio = arquivoRepositorio;
+        }
+        public async Task<IActionResult> Incluir(Arquivo arquivo)
+        {
+            //var repo = new ArquivoRepositorioCSV();
+            //repo.Incluir(arquivo);
+            await _arquivoRepositorio.CriarArquivo(arquivo);
             var html = new ViewResult { ViewName = "sucesso" };
             return html;
         }
         public IActionResult ExibeFormulario()
-        
-        
         {
             var _repo = new ArquivoRepositorioCSV();
             ViewBag.Arquivos = _repo.Transferencia.Arquivos;
             return View("Index");
         }
-
-
-
         public IActionResult Sucesso()
         {
             ViewData["Message"] = "Sucesso";
             return View();
         }
-
-
 
         [HttpPost("pegarArquivo")]
         public async Task<IActionResult> PegarArquivo()

@@ -1,4 +1,6 @@
-﻿using System.Text;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Text;
 
 namespace ServicoTransferenciaRef.Models
 {
@@ -10,7 +12,7 @@ namespace ServicoTransferenciaRef.Models
         public double Agencia { get; set; }
         public string Banco { get; set; }
         public decimal Valor { get; set; }
-        public string Data { get; set; }
+        public string Data_transacao { get; set; }
         public ListaDeTransacoes Lista { get; set; }
 
         public string Detalhes()
@@ -23,12 +25,12 @@ namespace ServicoTransferenciaRef.Models
             stringBuilder.AppendLine($"Agencia: {Agencia}");
             stringBuilder.AppendLine($"Banco: {Banco}");
             stringBuilder.AppendLine($"Valor: {Valor}");
-            stringBuilder.AppendLine($"Data: {Data}");
+            stringBuilder.AppendLine($"Data: {Data_transacao}");
             return stringBuilder.ToString();
         }
         public override string ToString()
         {
-            return $"{Id} | {Nome} | {Conta} | {Agencia} | {Banco} | {Valor} | {Data}";
+            return $"{Id} | {Nome} | {Conta} | {Agencia} | {Banco} | {Valor} | {Data_transacao}";
         }
     }
 }

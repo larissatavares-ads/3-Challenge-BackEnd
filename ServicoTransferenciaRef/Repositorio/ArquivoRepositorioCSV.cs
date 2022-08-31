@@ -1,8 +1,13 @@
-﻿using ServicoTransferenciaRef.Models;
+﻿using Dapper;
+using MySql.Data.MySqlClient;
+using ServicoTransferenciaRef.Models;
+using ServicoTransferenciaRef.Settings;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.IO;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace ServicoTransferenciaRef.Repositorio
 {
@@ -10,6 +15,7 @@ namespace ServicoTransferenciaRef.Repositorio
     {
         private static string nomeArquivoCSV = "Repositorio\\arquivos.csv";
         private ListaDeTransacoes _transferencia;
+        public string _connectionString { get; set; }
 
         public ArquivoRepositorioCSV()
         {
@@ -34,7 +40,7 @@ namespace ServicoTransferenciaRef.Repositorio
                         Agencia = Convert.ToDouble(infoArquivo[4]),
                         Banco = infoArquivo[5],
                         Valor = Convert.ToDecimal(infoArquivo[6]),
-                        Data = infoArquivo[7]
+                        Data_transacao = infoArquivo[7]
                     };
                     switch (infoArquivo[0])
                     {
@@ -62,7 +68,7 @@ namespace ServicoTransferenciaRef.Repositorio
                     Agencia = Convert.ToDouble(line[2]),
                     Banco = line[3],
                     Valor = Convert.ToDecimal(line[4]),
-                    Data = line[5]
+                    Data_transacao = line[5]
                 };
             }
             return arrayTransferencia;
@@ -75,7 +81,31 @@ namespace ServicoTransferenciaRef.Repositorio
             var id = Todos.Select(x => x.Id).Max();
             using (var file = File.AppendText(nomeArquivoCSV))
             {
-                file.WriteLine($"transferencia;{id + 1};{arquivo.Nome};{arquivo.Conta};{arquivo.Agencia};{arquivo.Banco};{arquivo.Valor};{arquivo.Data}");
+                file.WriteLine($"transferencia;{id + 1};{arquivo.Nome};{arquivo.Conta};{arquivo.Agencia};{arquivo.Banco};{arquivo.Valor};{arquivo.Data_transacao}");
+            }
+        }
+
+
+        public ArquivoRepositorioCSV(ConnectionStringSettings settings)
+        {
+            _connectionString = settings.ConnectionString();
+        }
+        public async Task CriarArquivo(Arquivo arquivo)
+        {
+            using (IDbConnection conexao = new MySqlConnection(_connectionString))
+            {
+                conexao.Open();
+                await conexao
+                    .ExecuteAsync($"INSERT INTO Arquivo (Nome, Conta, Agencia, Banco, Valor, Data_transacao) VALUES (@Nome, @Conta, @Agencia, @Banco, @Valor, @Data_transacao);", arquivo);
+            }
+        }
+        public async Task<List<Arquivo>> RecuperarArquivos()
+        {
+            using (IDbConnection conexao = new MySqlConnection(_connectionString))
+            {
+                conexao.Open();
+                return (await conexao
+                    .QueryAsync<Arquivo>("SELECT * FROM Arquivo;")).ToList();
             }
         }
     }

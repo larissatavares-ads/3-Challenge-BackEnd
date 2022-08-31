@@ -29,7 +29,7 @@
                 <input name="Valor" />
                 <br />
                 <label>Data:</label>
-                <input name="Data" />
+                <input name="Data_transacao" />
                 <br />
                 <button>Gravar</button>
             </div>
@@ -53,13 +53,44 @@
         <ul>
             @foreach (var arquivo in ViewBag.Arquivos)
             {
-                <li>@arquivo.Nome | @arquivo.Conta | @arquivo.Agencia | @arquivo.Banco | @arquivo.Valor | @arquivo.Data</li>
+                <li>@arquivo.Nome | @arquivo.Conta | @arquivo.Agencia | @arquivo.Banco | @arquivo.Valor | @arquivo.Data_transacao</li>
                 ;
             }
         </ul>
+        <br /><br />
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Conta</th>
+                    <th scope="col">Agencia</th>
+                    <th scope="col">Banco</th>
+                    <th scope="col">Valor</th>
+                    <th scope="col">Data_transacao</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var importacao in ViewBag.Arquivos)
+            {
+                <tr>
+                    <td>@importacao.Nome</td>
+                    <td>@importacao.Conta</td>
+                    <td>@importacao.Agencia</td>
+                    <td>@importacao.Banco</td>
+                    <td>@importacao.Valor</td>
+                    <td>@importacao.Data_transacao</td>
+                </tr>
+            }
+            </tbody>
+        </table>
+
 
         @*Testando MySQL*@
         <h3>TESTANDO MYSQL</h3>
+
+        
+
+
         <form id="form1" runat="server">
             <div>
                 <asp:HiddenField id="idConta" runat="server"/>

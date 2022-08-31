@@ -1,5 +1,6 @@
 ﻿using ServicoTransferenciaRef.Models;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace ServicoTransferenciaRef.Repositorio
 {
@@ -8,5 +9,7 @@ namespace ServicoTransferenciaRef.Repositorio
         ListaDeTransacoes Transferencia { get; }
         IEnumerable<Arquivo> Todos { get; }
         void Incluir(Arquivo arquivo);
+        Task CriarArquivo(Arquivo arquivo);
+        Task<List<Arquivo>> RecuperarArquivos();
     }
 }
