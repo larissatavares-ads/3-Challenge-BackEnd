@@ -19,20 +19,28 @@ namespace ServicoTransferenciaRef.Controllers
         {
             _arquivoRepositorio = arquivoRepositorio;
         }
+
+        public async Task<IActionResult> Index()
+        {
+            return View(await _arquivoRepositorio.RecuperarArquivos());
+        }
+
         public async Task<IActionResult> Incluir(Arquivo arquivo)
         {
             //var repo = new ArquivoRepositorioCSV();
             //repo.Incluir(arquivo);
             await _arquivoRepositorio.CriarArquivo(arquivo);
+            await _arquivoRepositorio.RecuperarArquivos();
             var html = new ViewResult { ViewName = "sucesso" };
             return html;
         }
-        public IActionResult ExibeFormulario()
-        {
-            var _repo = new ArquivoRepositorioCSV();
-            ViewBag.Arquivos = _repo.Transferencia.Arquivos;
-            return View("Index");
-        }
+        //public IActionResult ExibeFormulario()
+        //{
+        //    var _repo = new ArquivoRepositorioCSV();
+        //    //ViewBag.Arquivos = _repo.Transferencia.Arquivos;
+        //    ViewBag.Todos = _repo.Todos;
+        //    return View("Index");
+        //}
         public IActionResult Sucesso()
         {
             ViewData["Message"] = "Sucesso";
@@ -47,11 +55,11 @@ namespace ServicoTransferenciaRef.Controllers
                 string conteudo = await PegarConteudoDoArquivo(HttpContext);
                 string[][] linhas = conteudo.ToString().Split('\n').Select(l => l.Split(';')).ToArray();
                 Arquivo arquivos = ArquivoRepositorioCSV.CreateList(linhas);
-                Incluir(arquivos);
+                await Incluir(arquivos);
 
-                return Sucesso();
+                //return Sucesso();
 
-                //return Ok(new BaseRetorno { Mensagem = "Transações importadas com sucesso" });
+                return Ok(new BaseRetorno { Mensagem = "Transações importadas com sucesso" });
             }
             catch (BusinessException ex)
             {

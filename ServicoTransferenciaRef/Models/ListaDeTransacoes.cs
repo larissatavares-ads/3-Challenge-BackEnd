@@ -8,16 +8,16 @@ namespace ServicoTransferenciaRef.Models
     {
 
         private List<Arquivo> _arquivos;
+        public string Nome { get; set; }
+        public IEnumerable<Arquivo> Arquivos
+        {
+            get { return _arquivos; }
+        }
         public ListaDeTransacoes(string nome, params Arquivo[] arquivos)
         {
             Nome = nome;
             _arquivos = arquivos.ToList();
             _arquivos.ForEach(a => a.Lista = this);
-        }
-        public string Nome { get; set; }
-        public IEnumerable<Arquivo> Arquivos
-        {
-            get { return _arquivos; }
         }
         public override string ToString()
         {

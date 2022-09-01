@@ -21,6 +21,7 @@ namespace ServicoTransferenciaRef
             services.AddSingleton(teste);
             services.AddScoped<IArquivoRepositorio, ArquivoRepositorioCSV>();
         }
+        //No ASP.NET todos os Middlewares são definidos no método Configure
         public void Configure(IApplicationBuilder app)
         {
             app.UseDeveloperExceptionPage();

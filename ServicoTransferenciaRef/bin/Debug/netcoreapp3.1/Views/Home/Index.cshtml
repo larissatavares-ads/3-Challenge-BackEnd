@@ -51,7 +51,7 @@
         <br />
         <h3>IMPORTAÇÕES REALIZADAS</h3>
         <ul>
-            @foreach (var arquivo in ViewBag.Arquivos)
+            @foreach (var arquivo in Model)
             {
                 <li>@arquivo.Nome | @arquivo.Conta | @arquivo.Agencia | @arquivo.Banco | @arquivo.Valor | @arquivo.Data_transacao</li>
                 ;
@@ -66,58 +66,23 @@
                     <th scope="col">Agencia</th>
                     <th scope="col">Banco</th>
                     <th scope="col">Valor</th>
-                    <th scope="col">Data_transacao</th>
+                    <th scope="col">Data transação</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach (var importacao in ViewBag.Arquivos)
-            {
-                <tr>
-                    <td>@importacao.Nome</td>
-                    <td>@importacao.Conta</td>
-                    <td>@importacao.Agencia</td>
-                    <td>@importacao.Banco</td>
-                    <td>@importacao.Valor</td>
-                    <td>@importacao.Data_transacao</td>
-                </tr>
-            }
+                @foreach (var importacao in Model)
+                {
+                    <tr>
+                        <td>@importacao.Nome</td>
+                        <td>@importacao.Conta</td>
+                        <td>@importacao.Agencia</td>
+                        <td>@importacao.Banco</td>
+                        <td>@importacao.Valor</td>
+                        <td>@importacao.Data_transacao</td>
+                    </tr>
+                }
             </tbody>
         </table>
-
-
-        @*Testando MySQL*@
-        <h3>TESTANDO MYSQL</h3>
-
-        
-
-
-        <form id="form1" runat="server">
-            <div>
-                <asp:HiddenField id="idConta" runat="server"/>
-                <table>
-                    <tr>
-                        <td>
-                            <Label Text="Conta" runat="server">Lista de transações</Label>
-                        </td>
-                        <td colspan="2">
-                            <input id="numId" runat="server"/>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td colspan="2">
-                            <button type="button" Text="Salvar" id="btnSalvar" runat="server">Salvar</button>
-                            <button type="button" Text="Editar" id="btnEditar" runat="server">Editar</button>
-                            <button type="button" Text="Deletar" id="btnDeletar" runat="server">Deletar</button>
-                        </td>
-                    </tr>
-
-
-                </table>
-            </div>
-        </form>
-
-        @*Testando MySQL*@
 
 
     </body>

@@ -14,8 +14,13 @@ namespace ServicoTransferenciaRef.Repositorio
     public class ArquivoRepositorioCSV : IArquivoRepositorio
     {
         private static string nomeArquivoCSV = "Repositorio\\arquivos.csv";
+
         private ListaDeTransacoes _transferencia;
+        public ListaDeTransacoes Transferencia => _transferencia;
+        public IEnumerable<Arquivo> Todos => _transferencia.Arquivos;
         public string _connectionString { get; set; }
+
+
 
         public ArquivoRepositorioCSV()
         {
@@ -74,16 +79,15 @@ namespace ServicoTransferenciaRef.Repositorio
             return arrayTransferencia;
         }
 
-        public ListaDeTransacoes Transferencia => _transferencia;
-        public IEnumerable<Arquivo> Todos => _transferencia.Arquivos;
-        public void Incluir(Arquivo arquivo)
-        {
-            var id = Todos.Select(x => x.Id).Max();
-            using (var file = File.AppendText(nomeArquivoCSV))
-            {
-                file.WriteLine($"transferencia;{id + 1};{arquivo.Nome};{arquivo.Conta};{arquivo.Agencia};{arquivo.Banco};{arquivo.Valor};{arquivo.Data_transacao}");
-            }
-        }
+        
+        //public void Incluir(Arquivo arquivo)
+        //{
+        //    var id = Todos.Select(x => x.Id).Max();
+        //    using (var file = File.AppendText(nomeArquivoCSV))
+        //    {
+        //        file.WriteLine($"transferencia;{id + 1};{arquivo.Nome};{arquivo.Conta};{arquivo.Agencia};{arquivo.Banco};{arquivo.Valor};{arquivo.Data_transacao}");
+        //    }
+        //}
 
 
         public ArquivoRepositorioCSV(ConnectionStringSettings settings)
@@ -104,8 +108,8 @@ namespace ServicoTransferenciaRef.Repositorio
             using (IDbConnection conexao = new MySqlConnection(_connectionString))
             {
                 conexao.Open();
-                return (await conexao
-                    .QueryAsync<Arquivo>("SELECT * FROM Arquivo;")).ToList();
+                var lista = (await conexao.QueryAsync<Arquivo>("SELECT * FROM arquivo;")).ToList();
+                return lista;
             }
         }
     }

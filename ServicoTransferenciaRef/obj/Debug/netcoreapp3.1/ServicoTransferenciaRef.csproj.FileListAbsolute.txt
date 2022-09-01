@@ -174,3 +174,37 @@ C:\Users\beatr\Documents\Estudos Larissa\3-Challenge-BackEnd\ServicoTransferenci
 C:\Users\beatr\Documents\Estudos Larissa\3-Challenge-BackEnd\ServicoTransferenciaRef\bin\Debug\netcoreapp3.1\System.Collections.Immutable.dll
 C:\Users\beatr\Documents\Estudos Larissa\3-Challenge-BackEnd\ServicoTransferenciaRef\bin\Debug\netcoreapp3.1\System.ComponentModel.Annotations.dll
 C:\Users\beatr\Documents\Estudos Larissa\3-Challenge-BackEnd\ServicoTransferenciaRef\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
+C:\GitHub\3-Challenge-BackEnd\ServicoTransferenciaRef\bin\Debug\netcoreapp3.1\Dapper.dll
+C:\GitHub\3-Challenge-BackEnd\ServicoTransferenciaRef\bin\Debug\netcoreapp3.1\Google.Protobuf.dll
+C:\GitHub\3-Challenge-BackEnd\ServicoTransferenciaRef\bin\Debug\netcoreapp3.1\K4os.Compression.LZ4.dll
+C:\GitHub\3-Challenge-BackEnd\ServicoTransferenciaRef\bin\Debug\netcoreapp3.1\K4os.Compression.LZ4.Streams.dll
+C:\GitHub\3-Challenge-BackEnd\ServicoTransferenciaRef\bin\Debug\netcoreapp3.1\K4os.Hash.xxHash.dll
+C:\GitHub\3-Challenge-BackEnd\ServicoTransferenciaRef\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
+C:\GitHub\3-Challenge-BackEnd\ServicoTransferenciaRef\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\GitHub\3-Challenge-BackEnd\ServicoTransferenciaRef\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.dll
+C:\GitHub\3-Challenge-BackEnd\ServicoTransferenciaRef\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Abstractions.dll
+C:\GitHub\3-Challenge-BackEnd\ServicoTransferenciaRef\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Memory.dll
+C:\GitHub\3-Challenge-BackEnd\ServicoTransferenciaRef\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\GitHub\3-Challenge-BackEnd\ServicoTransferenciaRef\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
+C:\GitHub\3-Challenge-BackEnd\ServicoTransferenciaRef\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\GitHub\3-Challenge-BackEnd\ServicoTransferenciaRef\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.dll
+C:\GitHub\3-Challenge-BackEnd\ServicoTransferenciaRef\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Abstractions.dll
+C:\GitHub\3-Challenge-BackEnd\ServicoTransferenciaRef\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
+C:\GitHub\3-Challenge-BackEnd\ServicoTransferenciaRef\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
+C:\GitHub\3-Challenge-BackEnd\ServicoTransferenciaRef\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
+C:\GitHub\3-Challenge-BackEnd\ServicoTransferenciaRef\bin\Debug\netcoreapp3.1\MySql.Data.dll
+C:\GitHub\3-Challenge-BackEnd\ServicoTransferenciaRef\bin\Debug\netcoreapp3.1\Ubiety.Dns.Core.dll
+C:\GitHub\3-Challenge-BackEnd\ServicoTransferenciaRef\bin\Debug\netcoreapp3.1\ZstdNet.dll
+C:\GitHub\3-Challenge-BackEnd\ServicoTransferenciaRef\bin\Debug\netcoreapp3.1\MySql.EntityFrameworkCore.dll
+C:\GitHub\3-Challenge-BackEnd\ServicoTransferenciaRef\bin\Debug\netcoreapp3.1\BouncyCastle.Crypto.dll
+C:\GitHub\3-Challenge-BackEnd\ServicoTransferenciaRef\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+C:\GitHub\3-Challenge-BackEnd\ServicoTransferenciaRef\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\GitHub\3-Challenge-BackEnd\ServicoTransferenciaRef\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\GitHub\3-Challenge-BackEnd\ServicoTransferenciaRef\bin\Debug\netcoreapp3.1\System.Collections.Immutable.dll
+C:\GitHub\3-Challenge-BackEnd\ServicoTransferenciaRef\bin\Debug\netcoreapp3.1\System.ComponentModel.Annotations.dll
+C:\GitHub\3-Challenge-BackEnd\ServicoTransferenciaRef\bin\Debug\netcoreapp3.1\System.Configuration.ConfigurationManager.dll
+C:\GitHub\3-Challenge-BackEnd\ServicoTransferenciaRef\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
+C:\GitHub\3-Challenge-BackEnd\ServicoTransferenciaRef\bin\Debug\netcoreapp3.1\System.Runtime.CompilerServices.Unsafe.dll
+C:\GitHub\3-Challenge-BackEnd\ServicoTransferenciaRef\bin\Debug\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
+C:\GitHub\3-Challenge-BackEnd\ServicoTransferenciaRef\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\GitHub\3-Challenge-BackEnd\ServicoTransferenciaRef\obj\Debug\netcoreapp3.1\ServicoTransferenciaRef.MvcApplicationPartsAssemblyInfo.cs

@@ -8,7 +8,7 @@ namespace ServicoTransferenciaRef.Repositorio
     {
         ListaDeTransacoes Transferencia { get; }
         IEnumerable<Arquivo> Todos { get; }
-        void Incluir(Arquivo arquivo);
+        //void Incluir(Arquivo arquivo);
         Task CriarArquivo(Arquivo arquivo);
         Task<List<Arquivo>> RecuperarArquivos();
     }

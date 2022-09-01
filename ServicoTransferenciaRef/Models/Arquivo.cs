@@ -15,19 +15,19 @@ namespace ServicoTransferenciaRef.Models
         public string Data_transacao { get; set; }
         public ListaDeTransacoes Lista { get; set; }
 
-        public string Detalhes()
-        {
-            var stringBuilder = new StringBuilder();
-            stringBuilder.AppendLine("Detalhes da transferencia");
-            stringBuilder.AppendLine("===========================");
-            stringBuilder.AppendLine($"Titular: {Nome}");
-            stringBuilder.AppendLine($"Conta: {Conta}");
-            stringBuilder.AppendLine($"Agencia: {Agencia}");
-            stringBuilder.AppendLine($"Banco: {Banco}");
-            stringBuilder.AppendLine($"Valor: {Valor}");
-            stringBuilder.AppendLine($"Data: {Data_transacao}");
-            return stringBuilder.ToString();
-        }
+        //public string Detalhes()
+        //{
+        //    var stringBuilder = new StringBuilder();
+        //    stringBuilder.AppendLine("Detalhes da transferencia");
+        //    stringBuilder.AppendLine("===========================");
+        //    stringBuilder.AppendLine($"Titular: {Nome}");
+        //    stringBuilder.AppendLine($"Conta: {Conta}");
+        //    stringBuilder.AppendLine($"Agencia: {Agencia}");
+        //    stringBuilder.AppendLine($"Banco: {Banco}");
+        //    stringBuilder.AppendLine($"Valor: {Valor}");
+        //    stringBuilder.AppendLine($"Data: {Data_transacao}");
+        //    return stringBuilder.ToString();
+        //}
         public override string ToString()
         {
             return $"{Id} | {Nome} | {Conta} | {Agencia} | {Banco} | {Valor} | {Data_transacao}";

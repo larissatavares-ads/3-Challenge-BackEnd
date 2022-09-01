@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 namespace ServicoTransferenciaRef.Controllers
 {
     [ApiController]
-    [Route("Arquivo")]
+    [Route("arquivo")]
     public class ArquivoController : ControllerBase
     {
         private IArquivoRepositorio _arquivoRepositorio;
