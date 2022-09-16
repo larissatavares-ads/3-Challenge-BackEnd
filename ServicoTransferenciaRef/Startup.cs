@@ -19,9 +19,9 @@ namespace ServicoTransferenciaRef
             services.AddRouting();
             services.AddMvc(options => options.EnableEndpointRouting = false);
             services.AddSingleton(teste);
-            services.AddScoped<IArquivoRepositorio, ArquivoRepositorioCSV>();
+            services.AddScoped<IArquivoRepositorio, ArquivoRepositorio>();
         }
-        //No ASP.NET todos os Middlewares são definidos no método Configure
+        //No ASP.NET todos os Middlewares sï¿½o definidos no mï¿½todo Configure
         public void Configure(IApplicationBuilder app)
         {
             app.UseDeveloperExceptionPage();

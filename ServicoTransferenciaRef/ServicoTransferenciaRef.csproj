@@ -14,6 +14,10 @@
     <EmbeddedResource Remove="Views\Upload\**" />
     <None Remove="NovaPasta1\**" />
     <None Remove="Views\Upload\**" />
+    <Compile Remove="Controllers\HomeNewController.cs" />
+    <Compile Remove="Controllers\teste.cs" />
+    <Compile Remove="Controllers\ArquivoController.cs" />
+    <Compile Remove="Views\HTMLUtils.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -39,7 +43,6 @@
     <None Include="Views\Home\Sucesso.cshtml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Views\Shared\_Sucesso.cshtml" />
   </ItemGroup>
 
   <ItemGroup>

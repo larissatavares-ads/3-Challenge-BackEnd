@@ -14,18 +14,7 @@ namespace ServicoTransferenciaRef.Controllers
         {
             _arquivoRepositorio = repo;
         }
-        [HttpPost]
-        public async Task<IActionResult> CriarArquivo(Arquivo arquivo)
-        {
-            await _arquivoRepositorio.CriarArquivo(arquivo);
-            return Ok(arquivo);
-        }
-        [HttpGet]
-        public async Task<IActionResult> RecuperarArquivo()
-        {
-            var lista = await _arquivoRepositorio.RecuperarArquivos();
-            return Ok(lista);
-        }
+        
 
     }
 }

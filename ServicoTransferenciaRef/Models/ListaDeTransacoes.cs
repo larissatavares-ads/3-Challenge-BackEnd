@@ -8,7 +8,7 @@ namespace ServicoTransferenciaRef.Models
     {
 
         private List<Arquivo> _arquivos;
-        public string Nome { get; set; }
+        public string Nome { get; }
         public IEnumerable<Arquivo> Arquivos
         {
             get { return _arquivos; }
@@ -19,16 +19,17 @@ namespace ServicoTransferenciaRef.Models
             _arquivos = arquivos.ToList();
             _arquivos.ForEach(a => a.Lista = this);
         }
-        public override string ToString()
-        {
-            var linhas = new StringBuilder();
-            linhas.AppendLine(Nome);
-            linhas.AppendLine("=========");
-            foreach (var arquivo in Arquivos)
-            {
-                linhas.AppendLine(arquivo.ToString());
-            }
-            return linhas.ToString();
-        }
+        
+        // public override string ToString()
+        // {
+        //     var linhas = new StringBuilder();
+        //     linhas.AppendLine(Nome);
+        //     linhas.AppendLine("=========");
+        //     foreach (var arquivo in Arquivos)
+        //     {
+        //         linhas.AppendLine(arquivo.ToString());
+        //     }
+        //     return linhas.ToString();
+        // }
     }
 }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\GitHub\\3-Challenge-BackEnd\\ServicoTransferenciaRef\\ServicoTransferenciaRef.csproj": {}
+    "C:\\Users\\lari_\\dev\\3-Challenge-BackEnd\\ServicoTransferenciaRef\\ServicoTransferenciaRef.csproj": {}
   },
   "projects": {
-    "C:\\GitHub\\3-Challenge-BackEnd\\ServicoTransferenciaRef\\ServicoTransferenciaRef.csproj": {
+    "C:\\Users\\lari_\\dev\\3-Challenge-BackEnd\\ServicoTransferenciaRef\\ServicoTransferenciaRef.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\GitHub\\3-Challenge-BackEnd\\ServicoTransferenciaRef\\ServicoTransferenciaRef.csproj",
+        "projectUniqueName": "C:\\Users\\lari_\\dev\\3-Challenge-BackEnd\\ServicoTransferenciaRef\\ServicoTransferenciaRef.csproj",
         "projectName": "ServicoTransferenciaRef",
-        "projectPath": "C:\\GitHub\\3-Challenge-BackEnd\\ServicoTransferenciaRef\\ServicoTransferenciaRef.csproj",
+        "projectPath": "C:\\Users\\lari_\\dev\\3-Challenge-BackEnd\\ServicoTransferenciaRef\\ServicoTransferenciaRef.csproj",
         "packagesPath": "C:\\Users\\lari_\\.nuget\\packages\\",
-        "outputPath": "C:\\GitHub\\3-Challenge-BackEnd\\ServicoTransferenciaRef\\obj\\",
+        "outputPath": "C:\\Users\\lari_\\dev\\3-Challenge-BackEnd\\ServicoTransferenciaRef\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

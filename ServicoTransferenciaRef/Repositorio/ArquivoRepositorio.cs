@@ -11,18 +11,14 @@ using System.Threading.Tasks;
 
 namespace ServicoTransferenciaRef.Repositorio
 {
-    public class ArquivoRepositorioCSV : IArquivoRepositorio
+    public class ArquivoRepositorio : IArquivoRepositorio
     {
         private static string nomeArquivoCSV = "Repositorio\\arquivos.csv";
 
         private ListaDeTransacoes _transferencia;
-        public ListaDeTransacoes Transferencia => _transferencia;
         public IEnumerable<Arquivo> Todos => _transferencia.Arquivos;
-        public string _connectionString { get; set; }
-
-
-
-        public ArquivoRepositorioCSV()
+        
+        public ArquivoRepositorio()
         {
             var arrayTransferencia = new List<Arquivo>();
 
@@ -52,8 +48,6 @@ namespace ServicoTransferenciaRef.Repositorio
                         case "transferencia":
                             arrayTransferencia.Add(arquivo);
                             break;
-                        default:
-                            break;
                     }
                 }
             }
@@ -61,6 +55,7 @@ namespace ServicoTransferenciaRef.Repositorio
             _transferencia = new ListaDeTransacoes("Transferencia", arrayTransferencia.ToArray());
         }
 
+        
         public static Arquivo CreateList(string[][] linhas)
         {
             var arrayTransferencia = new Arquivo();
@@ -78,22 +73,16 @@ namespace ServicoTransferenciaRef.Repositorio
             }
             return arrayTransferencia;
         }
-
         
-        //public void Incluir(Arquivo arquivo)
-        //{
-        //    var id = Todos.Select(x => x.Id).Max();
-        //    using (var file = File.AppendText(nomeArquivoCSV))
-        //    {
-        //        file.WriteLine($"transferencia;{id + 1};{arquivo.Nome};{arquivo.Conta};{arquivo.Agencia};{arquivo.Banco};{arquivo.Valor};{arquivo.Data_transacao}");
-        //    }
-        //}
-
-
-        public ArquivoRepositorioCSV(ConnectionStringSettings settings)
+        
+        
+        //==============================CONNECTION-STRING==============================
+        private string _connectionString { get; }
+        public ArquivoRepositorio(ConnectionStringSettings settings)
         {
             _connectionString = settings.ConnectionString();
         }
+        
         public async Task CriarArquivo(Arquivo arquivo)
         {
             using (IDbConnection conexao = new MySqlConnection(_connectionString))
@@ -103,6 +92,7 @@ namespace ServicoTransferenciaRef.Repositorio
                     .ExecuteAsync($"INSERT INTO Arquivo (Nome, Conta, Agencia, Banco, Valor, Data_transacao) VALUES (@Nome, @Conta, @Agencia, @Banco, @Valor, @Data_transacao);", arquivo);
             }
         }
+        
         public async Task<List<Arquivo>> RecuperarArquivos()
         {
             using (IDbConnection conexao = new MySqlConnection(_connectionString))

@@ -10,54 +10,67 @@ using System.Threading.Tasks;
 
 namespace ServicoTransferenciaRef.Controllers
 {
+    [ApiController]
+    [Route("arquivo")]
     public class HomeController : Controller
     {
         //Classe para processar os arquivos cadastrados
-        public IEnumerable<Arquivo> Arquivos { get; set; }
-        public IArquivoRepositorio _arquivoRepositorio { get; set; }
+        private IArquivoRepositorio _arquivoRepositorio { get; }
         public HomeController(IArquivoRepositorio arquivoRepositorio)
         {
             _arquivoRepositorio = arquivoRepositorio;
         }
 
-        public async Task<IActionResult> Index()
+        //=============================================CREATE===========================================================
+        //CREATE
+        [HttpPost]
+        public async Task<IActionResult> CriarArquivo(Arquivo arquivo)
         {
-            return View(await _arquivoRepositorio.RecuperarArquivos());
+            await _arquivoRepositorio.CriarArquivo(arquivo);
+            return Ok(arquivo);
         }
-
+        
+        //CREATE
         public async Task<IActionResult> Incluir(Arquivo arquivo)
         {
-            //var repo = new ArquivoRepositorioCSV();
-            //repo.Incluir(arquivo);
             await _arquivoRepositorio.CriarArquivo(arquivo);
             await _arquivoRepositorio.RecuperarArquivos();
             var html = new ViewResult { ViewName = "sucesso" };
             return html;
         }
-        //public IActionResult ExibeFormulario()
-        //{
-        //    var _repo = new ArquivoRepositorioCSV();
-        //    //ViewBag.Arquivos = _repo.Transferencia.Arquivos;
-        //    ViewBag.Todos = _repo.Todos;
-        //    return View("Index");
-        //}
-        public IActionResult Sucesso()
+        
+        //===============================================READ===========================================================
+        //READ
+        [HttpGet]
+        public async Task<IActionResult> RecuperarArquivo()
         {
-            ViewData["Message"] = "Sucesso";
-            return View();
+            var lista = await _arquivoRepositorio.RecuperarArquivos();
+            return Ok(lista);
+        }
+        
+        //READ
+        public async Task<IActionResult> Index()
+        {
+            return View(await _arquivoRepositorio.RecuperarArquivos());
         }
 
+        //READ
         [HttpPost("pegarArquivo")]
         public async Task<IActionResult> PegarArquivo()
         {
             try
             {
                 string conteudo = await PegarConteudoDoArquivo(HttpContext);
-                string[][] linhas = conteudo.ToString().Split('\n').Select(l => l.Split(';')).ToArray();
-                Arquivo arquivos = ArquivoRepositorioCSV.CreateList(linhas);
+                
+                string[][] linhas = conteudo
+                    .ToString()
+                    .Split('\n')
+                    .Select(l => l.Split(';'))
+                    .ToArray();
+               
+                
+                Arquivo arquivos = ArquivoRepositorio.CreateList(linhas);
                 await Incluir(arquivos);
-
-                //return Sucesso();
 
                 return Ok(new BaseRetorno { Mensagem = "Transações importadas com sucesso" });
             }
@@ -66,19 +79,27 @@ namespace ServicoTransferenciaRef.Controllers
                 return BadRequest(new BaseRetorno { Mensagem = ex.Message, Status = 1 });
             }
         }
+        
+        //READ
         private async Task<string> PegarConteudoDoArquivo(HttpContext httpContext)
         {
             UTF8Encoding uTF8Encoding = new UTF8Encoding();
+            
             byte[] request = new byte[(int)(HttpContext.Request.ContentLength ?? 0)];
+            
             await httpContext.Request.Body.ReadAsync(request, 0, request.Length);
+            
             string bodyComplete = Encoding.UTF8.GetString(request);
+            
             if (bodyComplete.Length < 21)
                 throw new BusinessException("O arquivo deve ter algum conteudo dentro");
             string base64 = uTF8Encoding.GetString(request).Remove(0, 23);
 
             // onde transforma de base64 para array de byte
             byte[] arquivoBinario = Convert.FromBase64String(base64);
+            
             StringBuilder conteudo = new StringBuilder();
+            
             foreach (byte b in arquivoBinario)
             {
                 conteudo.Append((char)b);
